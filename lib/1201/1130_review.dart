@@ -13,9 +13,7 @@ import 'dart:math';
 const int maxHp = 50;
 final int maxMp = 10;
 
-
 class Cleric {
-
   /*
 1장의 연습문제에서 작성한 Cleric클래스에 관하여, 2가지 수정을 행하시오.
 현시점의 Cleric 클래스의 정의에는, 각 인스턴스별로 최대 HP와 최대 MP 필드에 정보를 가지고 있습니다.
@@ -24,8 +22,6 @@ class Cleric {
 그래서, 최대 HP, 최대 MP의 필드가 각 인스턴스별로 있지 않도록,
 필드 선언에 적절한 키워드를 추가 하던지 말던지 자유.
   */
-
-
 
   String name;
   int hp = 50;
@@ -72,7 +68,6 @@ class Cleric {
 
  */
 
-
 class Asus {
   String name;
   int hp;
@@ -80,9 +75,9 @@ class Asus {
 
   Asus({
     required this.name,
-  this.hp = 40,
-     this.mp = 5,
-
+    this.hp = 40,
+    this.mp = 5,
   });
 }
+
 Asus asus = Asus(name: 'name');
