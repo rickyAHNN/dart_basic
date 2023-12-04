@@ -16,9 +16,10 @@ class cleric {
     final int MaxHP = 50;
     final int MaxMP = 50;
   }
-  Pray pray = Pray(3);
 
+  Pray pray = Pray(3);
 }
+
 class Pray {
   int i = 1;
   int healSecond;
@@ -26,7 +27,7 @@ class Pray {
 
   Pray(@required this.healSecond);
 
-  void healRecovery(){
+  void healRecovery(int healSecond) {
     int healing = heal.nextInt(3);
     int healings = healing + healSecond;
 
@@ -34,5 +35,4 @@ class Pray {
       print("$healings 만큼 회복되었습니다.");
     }
   }
-
 }
