@@ -2,7 +2,6 @@
 부정한 값이 설정 될 경우에는 “Exception(“에러메세지");” 를 작성하여 프로그램을 중단 시킵니다.
 */
 
-
 class Wand {
   String name;
   double power;
@@ -27,6 +26,7 @@ class Wizard {
   int mp;
 
   Wizard(this.name, this.hp, this.mp);
+
 //마법사나 지팡이의 이름은 null 일 수 없고, 반드시 3문자 이상이어야 한다
   set WizardName(String name) {
     if (name != null && name.length > 3) {
@@ -47,9 +47,10 @@ class Wizard {
       throw Exception('WizardWand $wand 에러');
     }
   }
+
   //마법사의 MP는 0 이상이어야 한다.
   set WizardMinMp(int mp) {
-    if (0<= mp) {
+    if (0 <= mp) {
       throw Exception('WizardWand $mp 에러');
     }
   }
@@ -75,32 +76,30 @@ class Wizard {
  */
 
 //이름을 가지는 Person 클래스를 작성하시오. Person 은 반드시 이름을 포함해야 합니다.
+
 class Person {
   String name;
 
   Person({
     required this.name,
   });
-  /*
+/*
   연습문제 2-3 에서 작성한 Person 클래스로 생성한 ‘홍길동’,
 ‘한석봉'의 나이를 각각 20, 25살 이라고 할 때, 이름과 나이를 쌍으로 적당한 컬렉션에 넣습니다.
 그 다음,
    */
-
 }
-
 void main() {
   Wizard wizard = Wizard('df', 10, 50);
   // print('${wizard.WizardName('dfes')}');
 
-
 //이름이 ‘홍길동', ‘한석봉' 인 Person 인스턴스를 생성하고, List에 담습니다.
 //List에 담긴 모든 Person 인스턴스의 이름을 표시하시오.
 
-  Person Han=Person(name: '한석봉');
-  Person Hong=Person(name: '홍길동');
+  Person Han = Person(name: '한석봉');
+  Person Hong = Person(name: '홍길동');
 
-  List<Person> PersonName=[Han, Hong];
+  List<Person> PersonName = [Han, Hong];
   print('${PersonName.toString()}');
 
   /*
@@ -109,10 +108,14 @@ void main() {
 “한석봉의 나이는 25살”
    */
   Map<Person, int> PersonNameAge = {
-    Han : 20,
-    Hong : 25,
+    Han: 20,
+    Hong: 25,
   };
 
-  PersonNameAge.entries.forEach((element) { print(element.key.toString());});
-  PersonNameAge.entries.forEach((element) { print(element.value);});
+  PersonNameAge.entries.forEach((element) {
+    print(element.key.toString());
+  });
+  PersonNameAge.entries.forEach((element) {
+    print(element.value);
+  });
 }
