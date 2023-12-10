@@ -7,7 +7,7 @@ deep copy 를 지원한다
 
  */
 
-class Book implements Comparable<Book>{
+class Book implements Comparable<Book> {
   String title;
   String comment;
   DateTime publishDate = DateTime.now();
