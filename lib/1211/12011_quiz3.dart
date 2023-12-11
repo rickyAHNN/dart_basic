@@ -1,26 +1,24 @@
-class Employee{
+import 'dart:io';
+
+class Employee {
   String name;
   int age;
 
-  Employee({
-    required this.name,
-    required this.age,
-  });
+  Employee(this.name, this.age);
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toJson() {
     return {
       'name': this.name,
       'age': this.age,
     };
   }
 
-  factory Employee.fromMap(Map<String, dynamic> map) {
+  factory Employee.fromJson(Map<String, dynamic> map) {
     return Employee(
-      name: map['name'] as String,
-      age: map['age'] as int,
+      map['name'] as String,
+      map['age'] as int,
     );
   }
-
 }
 
 class Department {
@@ -32,20 +30,30 @@ class Department {
     required this.leader,
   });
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toJson() {
     return {
       'name': this.name,
-      'leader': this.leader,
+      'leader': {
+        leader.name,
+        leader.age,
+      },
     };
   }
 
-  factory Department.fromMap(Map<String, dynamic> map) {
+  factory Department.fromJson(Map<String, dynamic> map) {
     return Department(
       name: map['name'] as String,
       leader: map['leader'] as Employee,
     );
   }
-
 }
 
-final Department Hong = Department(name: 'Hong-Gil-Dong', leader: );
+main() {
+  File file = File('company.txt');
+  final Employee employee = Employee('Hong-Gil-Dong', 41);
+  print(employee.toJson());
+  Department department = Department(name: 'Hong-Gil-Dong', leader: employee);
+  print(department.toJson());
+  file.writeAsStringSync(department.toJson().toString());
+
+}
