@@ -1,10 +1,11 @@
 //모음인지 알려주는
 
 main() {
-  Word word =  Word('abcde');
+  Word word = Word('abcde');
 
   print(word);
 }
+
 class Word {
   String word = '';
 
@@ -15,17 +16,21 @@ class Word {
     return 'Word{word: $word}';
   }
 
-List<String> Ee = ['a','e','i','o','u','A','E','I','O','U'];
-  bool isVowel(int i, String Ee) {
-    return word.substring(i, i + 1) == Ee;
+// List<String> Ee = ['a','e','i','o','u','A','E','I','O','U'];
+//   bool isVowel(int i, String Ee) {
+//     return word.substring(i, i + 1) == Ee;
 
-  // bool isVowel(int i) {
-  //   return word.substring(i, i + 1) == 'a'||
-  //       word.substring(i, i + 1) == 'e' ||
-  //       word.substring(i, i + 1) == 'e' ||
-  //       word.substring(i, i + 1) == 'i' ||
-  //       word.substring(i, i + 1) == 'o' ||
-  //       word.substring(i, i + 1) == 'u' ;
+  bool isVowel(int i) {
+    return word.substring(i, i + 1) == 'a' ||
+        word.substring(i, i + 1) == 'e' ||
+        word.substring(i, i + 1) == 'i' ||
+        word.substring(i, i + 1) == 'o' ||
+        word.substring(i, i + 1) == 'u' ||
+        word.substring(i, i + 1) == 'A' ||
+        word.substring(i, i + 1) == 'E' ||
+        word.substring(i, i + 1) == 'I' ||
+        word.substring(i, i + 1) == 'O' ||
+        word.substring(i, i + 1) == 'U';
   }
 }
 
@@ -37,23 +42,26 @@ class Word2 {
 
   bool isVowel(int i) {
     return word.substring(i, i + 1) == 'a' ||
-        i.toString() == 'e' ||
-        i.toString() == 'i' ||
-        i.toString() == 'o' ||
-        i.toString() == 'u';
+        word.substring(i, i + 1) == 'e' ||
+        word.substring(i, i + 1) == 'i' ||
+        word.substring(i, i + 1) == 'o' ||
+        word.substring(i, i + 1) == 'u';
   }
 
   bool isConsonant(int i) {
     if (word.substring(i, i + 1) != 'a' ||
-        i.toString() != 'e' ||
-        i.toString() != 'i' ||
-        i.toString() != 'o' ||
-        i.toString() != 'u') {
+        word.substring(i, i + 1) != 'e' ||
+        word.substring(i, i + 1) != 'i' ||
+        word.substring(i, i + 1) != 'o' ||
+        word.substring(i, i + 1) != 'u' ||
+        word.substring(i, i + 1) != 'A' ||
+        word.substring(i, i + 1) != 'E' ||
+        word.substring(i, i + 1) != 'I' ||
+        word.substring(i, i + 1) != 'O' ||
+        word.substring(i, i + 1) != 'U') {
       return true;
     } else {
       return false;
     }
   }
 }
-
-
