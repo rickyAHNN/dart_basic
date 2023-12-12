@@ -82,12 +82,22 @@ void main() {
   print(transactions.map((e) => e.trader.name).toSet().toList()
     ..sort((a, b) => a.compareTo(b)));
   print('-------------');
+
   // 5. 밀라노에 거래자가 있는가?
-  transactions
+  final ddf = transactions
       .map((e) => e.trader)
-      .where((element) => element.city == "Milan")
-      .toSet()
-      .forEach((element) {
-    print(element);
-  });
+      .any((element) => element.city == "Milan")
+      .toString();
+  print(ddf);
+  print('----------');
+  // 6. 케임브리지에 거주하는 거래자의 모든 트랙잭션값을 출력하시오
+  final asd = transactions
+      .where((element) => element.trader.city == "Cambridge")
+      .map((e) => e.value)
+      .toList();
+  print(asd);
 }
+// 7. 전체 트랜잭션 중 최대값은 얼마인가?
+// final qsws = transactions.
+
+// 8. 전체 트랜잭션 중 최소값은 얼마인가?
