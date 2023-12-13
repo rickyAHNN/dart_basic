@@ -57,21 +57,22 @@ void main() {
   // print(transactions.map((e) => e.trader.name).toSet().toList());
 
   // 2. map 거래자가 근무하는 모든 도시를 중복 없이 나열하시오
-  print(transactions.map((e) => e.trader.city).toSet());
-
+  print(transactions.map((maping) => maping.trader.city).toSet());
+  print('dfdfsfsdfsdf');
 //where sort 3. 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하여 나열하시오
-  final a = transactions
+  print(transactions
       .where((e) => e.trader.city.contains("Cambridge"))
       .map((e) => e.trader.city)
-      .toList();
+      .toList());
 
   final b = transactions
       .where((e) => e.trader.city == "Cambridge") // where 조건 필터링 찾기
       .map((e) => e.trader.name) //map 추출
+      .toSet()
       .toList();
-  a.sort((a, b) => a.compareTo(b));
+  b.sort((a, b) => a.compareTo(b));
 
-  print(b);
+  print('b는 $b');
 
   // 4. sort 모든 거래자의 이름을 알파벳순으로 정렬하여 나열하시오
   final v = transactions
