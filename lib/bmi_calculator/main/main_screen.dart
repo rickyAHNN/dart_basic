@@ -1,3 +1,4 @@
+import 'package:dart_basic/bmi_calculator/result/result_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -54,8 +55,16 @@ class _MainScreenState extends State<MainScreen> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState?.validate() ?? false) {
-
+                    return;
                   }
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ResultScreen(
+                              height: 184,
+                              weight: 80,
+                            )),
+                  );
                 },
                 child: const Text('결과'),
               ),
