@@ -59,28 +59,14 @@ class CampingWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        NewIconWidget(
-            icon: const Icon(
-              (Icons.call),
-              color: Colors.blue,
-              size: 30,
-            ),
-            title: 'call'),
-        NewIconWidget(
-            icon: const Icon(
-              Icons.roundabout_left,
-              color: Colors.blue,
-              size: 30,
-            ),
-            title: 'fdf'),
-        NewIconWidget(
-          icon: const Icon(
-            size: 30,
-            Icons.dangerous,
-            color: Colors.blue,
-          ),
-          title: 'df',
-        )
+        NewIconWidget(icon: Icons.earbuds_battery_outlined, title: 'aaaa'),
+        NewIconWidget(icon: Icons.access_alarm_rounded, title: 'ddd'),
+        // NewIconWidget(
+        //   icon: const Icon(
+        //
+        //   ),
+        //   title: 'df',
+        // )
       ],
     );
   }
@@ -88,7 +74,7 @@ class CampingWidget extends StatelessWidget {
 
 class NewIconWidget extends StatelessWidget {
   String title;
-  Icon icon;
+  IconData icon;
 
   NewIconWidget({
     super.key,
@@ -100,7 +86,11 @@ class NewIconWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        icon,
+        Icon(
+          icon,
+          size: 30,
+          color: Colors.blue,
+        ),
         const SizedBox(
           height: 10,
         ),
