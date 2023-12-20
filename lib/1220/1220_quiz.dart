@@ -10,23 +10,39 @@ class BirthdayCard extends StatefulWidget {
 class _BirthdayCardState extends State<BirthdayCard> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Happy Birthday Sam!',
-              style: TextStyle(fontSize: 80, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
+    return Scaffold(
+      body: Stack(
+        children: [
+          Center(
+            child: Container(
+              child: Image.network(
+                'https://search.pstatic.net/common/'
+                '?src=http%3A%2F%2Fblogfiles.naver.'
+                'net%2F20160617_207%2Fjane0014_1466174155821prMFQ_'
+                'PNG%2F20160616_0112451.png&type=sc960_832',
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [Text('From Emma')],
-            )
-          ],
-        ),
+          ),
+          const Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Happy Birthday Sam!',
+                style: TextStyle(fontSize: 80, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'From Emma',
+                    style: TextStyle(fontSize: 30),
+                  )
+                ],
+              )
+            ],
+          ),
+        ],
       ),
     );
   }
