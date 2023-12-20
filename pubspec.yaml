@@ -38,6 +38,7 @@ dependencies:
   http: ^1.1.2
   json_annotation: ^4.8.1
   shared_preferences: ^2.2.2
+  lottie: ^2.7.0
 
 dev_dependencies:
   flutter_test:
