@@ -15,16 +15,14 @@ class _BirthdayCardState extends State<BirthdayCard> {
       body: SafeArea(
         child: Stack(
           children: [
-            Center(
-              child: Align(
-                alignment: Alignment.bottomRight,
-                child: Container(
-                  child: Lottie.asset(
-                    'assets/Animation - 1703058376178.json',
-                  ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Container(
+                child: Lottie.asset(
+                  'assets/Animation - 1703058376178.json',
                 ),
               ),
-            ),
+            ), // 1번 종이(바닥종이)
             const Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -43,7 +41,7 @@ class _BirthdayCardState extends State<BirthdayCard> {
                   ],
                 )
               ],
-            ),
+            ), //2번 종이
           ],
         ),
       ),

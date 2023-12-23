@@ -12,7 +12,7 @@ class StopWatchScreen extends StatefulWidget {
 class _StopWatchScreenState extends State<StopWatchScreen> {
   Timer? _timer;
 
-  int time = 0;
+  int _time = 0;
   bool _isRunning = false;
   List<String> lapTimes = [];
 
@@ -32,12 +32,25 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
     }
   }
 
-  void _start() {}
+  void _start() {
+    _timer = Timer.periodic(const Duration(microseconds: 10), (
+      timer,
+    ) {
+      setState(() {
+        _time++;
+      });
+    });
+  }
 
-  void _pause() {}
+  void _pause() {
+    _timer?.cancel();
+  }
 
   @override
   Widget build(BuildContext context) {
+    int sec = _time ~/ 100;
+    String hundredth = '${_time % 100}'.padLeft(2, '0');
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('스톱 워치'),
@@ -47,16 +60,16 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
           const SizedBox(
             height: 30,
           ),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                '',
+                '$sec',
                 style: TextStyle(fontSize: 50),
               ),
               Text(
-                '',
+                '$hundredth',
               ),
             ],
           ),
