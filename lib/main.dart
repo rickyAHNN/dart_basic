@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           bodyText1: TextStyle(color: Colors.white),
         ),
       ),
-      home: const YoutubeUI(),
+      home: const StopWatchScreen(),
     );
   }
 }

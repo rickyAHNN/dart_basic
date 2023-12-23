@@ -14,7 +14,7 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
 
   int _time = 0;
   bool _isRunning = false;
-  List<String> lapTimes = [];
+  List<String> _lapTimes = [];
 
   @override
   void dispose() {
@@ -44,6 +44,17 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
 
   void _pause() {
     _timer?.cancel();
+  }
+
+  void _reset() {
+    _isRunning = false;
+    _timer?.cancel();
+    _lapTimes.clear();
+    _time = 0;
+  }
+
+  void _recordLapTime(String time) {
+    _lapTimes.insert(0, '${_lapTimes.length + 1}등$_time');
   }
 
   @override
@@ -77,30 +88,11 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
             height: 200,
             width: 100,
             child: ListView(
-              children: const [
-                Center(child: Text('스크롤', style: TextStyle(fontSize: 30))),
-                Center(child: Text('스크롤', style: TextStyle(fontSize: 30))),
-                Center(
-                    child: Text(
-                  '스크롤',
-                  style: TextStyle(fontSize: 30),
-                )),
-                Center(
-                    child: Text(
-                  '스크롤',
-                  style: TextStyle(fontSize: 30),
-                )),
-                Center(
-                    child: Text(
-                  '스크롤',
-                  style: TextStyle(fontSize: 30),
-                )),
-                Center(
-                    child: Text(
-                  '스크롤',
-                  style: TextStyle(fontSize: 30),
-                )),
-              ],
+              children: _lapTimes
+                  .map(
+                    (e) => Center(child: Text(e)),
+                  )
+                  .toList(),
             ),
           ),
           const Spacer(),
@@ -109,7 +101,11 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
             children: [
               FloatingActionButton(
                 backgroundColor: Colors.orange,
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    _reset();
+                  });
+                },
                 child: const Icon(Icons.refresh),
               ),
               FloatingActionButton(
@@ -125,7 +121,9 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
               ),
               FloatingActionButton(
                 backgroundColor: Colors.green,
-                onPressed: () {},
+                onPressed: () {
+                  _recordLapTime('$sec.$hundredth');
+                },
                 child: const Icon(Icons.add),
               ),
             ],
