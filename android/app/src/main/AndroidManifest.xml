@@ -4,9 +4,7 @@
         android:label="dart_basic"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-
-        <uses-permission android:name="android.permission.INTERNET" />
-        <!-- 인터넷 사용권한부여 -->
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"

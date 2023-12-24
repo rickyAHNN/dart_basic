@@ -5,6 +5,7 @@ import 'package:dart_basic/1220/1220_star.dart';
 import 'package:dart_basic/bmi_calculator/main/main_screen.dart';
 import 'package:dart_basic/starbucksUI.dart';
 import 'package:dart_basic/stop_watch_string/stop_watch_string.dart';
+import 'package:dart_basic/tilt_sensor/tilt_sensor.dart';
 import 'package:dart_basic/youtubeUI/youtubeUI.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
           bodyText1: TextStyle(color: Colors.white),
         ),
       ),
-      home: const StopWatchScreen(),
+      home: const SensorApp(),
     );
   }
 }
