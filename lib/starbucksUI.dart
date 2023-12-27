@@ -44,78 +44,75 @@ class _StarbucksUiState extends State<StarbucksUi> {
                   titlePadding: const EdgeInsets.only(
                     bottom: 20,
                   ),
-                  background: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.asset(
-                      'assets/starbucks_01.png',
-                    ),
-                  ),
-                  title: Container(
-                    width: double.infinity,
-                    height: 100,
-                    child: Column(
-                      children: [
-                        // SizedBox(
-                        //   width: double.infinity,
-                        //   height: 200,
-                        //   child: ClipRRect(
-                        //     borderRadius: BorderRadius.circular(10),
-                        //     child: Image.asset(
-                        //       'assets/starbucks_01.png',
-                        //     ),
-                        //   ),
-                        // ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: SizedBox(
-                            width: double.infinity,
-                            height: 100,
-                            child: Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Text(
-                                      '1 \u{2B50}until Green Level',
-                                      style: TextStyle(
-                                        color: Colors.grey[500],
-                                      ),
-                                      textAlign: TextAlign.left,
-                                    ),
-                                    LinearPercentIndicator(
-                                        progressColor: Colors.grey[600],
-                                        backgroundColor: Colors.grey[300],
-                                        percent: 0.75,
-                                        width: 200.0,
-                                        animation: true,
-                                        animationDuration: 100,
-                                        lineHeight: 15.0,
-                                        center: const Text(
-                                          "4",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 10),
-                                        ),
-                                        barRadius: const Radius.circular(10))
-                                  ],
-                                ),
-                                const Spacer(),
-                                const Row(
-                                  children: [
-                                    Text(
-                                      '4 ',
-                                      style: TextStyle(
-                                          fontSize: 20, color: Colors.black),
-                                    ),
-                                    Text('/ 5\u{2B50}')
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
+                  background: Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.asset(
+                          'assets/starbucks_01.png',
                         ),
-                      ],
-                    ),
+                      ),
+                      Column(
+                        children: [
+                          // SizedBox(
+                          //   width: double.infinity,
+                          //   height: 200,
+                          //   child: ClipRRect(
+                          //     borderRadius: BorderRadius.circular(10),
+                          //     child: Image.asset(
+                          //       'assets/starbucks_01.png',
+                          //     ),
+                          //   ),
+                          // ),
+                          Row(
+                            children: [
+                              Column(
+                                children: [
+                                  Text(
+                                    '1 \u{2B50}until Green Level',
+                                    style: TextStyle(
+                                      color: Colors.grey[500],
+                                    ),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                  LinearPercentIndicator(
+                                      progressColor: Colors.grey[600],
+                                      backgroundColor: Colors.grey[300],
+                                      percent: 0.75,
+                                      width: 200.0,
+                                      animation: true,
+                                      animationDuration: 100,
+                                      lineHeight: 15.0,
+                                      center: const Text(
+                                        "4",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 10),
+                                      ),
+                                      barRadius: const Radius.circular(10))
+                                ],
+                              ),
+                              const Spacer(),
+                              const Row(
+                                children: [
+                                  Text(
+                                    '4 ',
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.black),
+                                  ),
+                                  Text('/ 5\u{2B50}')
+                                ],
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
+                  // title: Container(
+                  //   width: double.infinity,
+                  //   height: 100,
+                  //   child:
+                  // ),
                 ),
                 bottom: const PreferredSize(
                   preferredSize: Size.fromHeight(50),
@@ -157,7 +154,7 @@ class _StarbucksUiState extends State<StarbucksUi> {
                 ),
                 pinned: true,
                 floating: true,
-                expandedHeight: 250,
+                expandedHeight: 280,
 
                 // actions: [
                 //

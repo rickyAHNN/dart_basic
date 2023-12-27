@@ -321,9 +321,10 @@ class _YoutubeUIState extends State<YoutubeUI> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.black,
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Colors.white,
         showUnselectedLabels: true,
-        unselectedItemColor: Colors.black,
+        unselectedItemColor: Colors.white,
         showSelectedLabels: true,
         backgroundColor: Colors.black,
         items: const [

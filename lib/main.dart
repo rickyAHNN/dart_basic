@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:dart_basic/1220/1220_quiz.dart';
 import 'package:dart_basic/1220/1220_star.dart';
 import 'package:dart_basic/bmi_calculator/main/main_screen.dart';
+import 'package:dart_basic/gps_map/gps_map.dart';
 import 'package:dart_basic/starbucksUI.dart';
 import 'package:dart_basic/stop_watch_string/stop_watch_string.dart';
 import 'package:dart_basic/tilt_sensor/tilt_sensor.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
           bodyText1: TextStyle(color: Colors.white),
         ),
       ),
-      home: const SensorApp(),
+      home: const GpsMapApp(),
     );
   }
 }
